@@ -44,8 +44,9 @@ The test results can be viewed in the "Run" tool window at the bottom of Intelli
    
 The project follows a standard Spring Boot project structure. Key directories include:
 
-src/main/java: Contains the main Java source code.
-src/test/java: Contains test classes.
+- src/main/java: Contains the main Java source code.
+
+- src/test/java: Contains test classes.
 
 
 
