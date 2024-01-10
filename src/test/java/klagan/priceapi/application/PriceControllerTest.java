@@ -1,6 +1,7 @@
 package klagan.priceapi.application;
 
-import klagan.priceapi.service.PriceService;
+import klagan.priceapi.infrastructure.adapter.PriceServiceAdapter;
+import klagan.priceapi.infrastructure.web.PriceController;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.skyscreamer.jsonassert.JSONAssert;
@@ -20,7 +21,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class PriceControllerTest {
 
     @Autowired
-    private PriceService priceService;
+    private PriceServiceAdapter priceServiceAdapter;
 
     private MockMvc mockMvc;
 
@@ -28,7 +29,7 @@ public class PriceControllerTest {
 
     @BeforeEach
     public void setup() {
-        this.mockMvc = MockMvcBuilders.standaloneSetup(new PriceController(priceService)).build();
+        this.mockMvc = MockMvcBuilders.standaloneSetup(new PriceController(priceServiceAdapter)).build();
     }
 
     /*
@@ -37,7 +38,7 @@ public class PriceControllerTest {
      */
     @Test
     public void testCalculatePrice_1() throws Exception {
-        String expected = "{\"product\":35455,\"chain\":1,\"rate\":1,\"endDate\":[2020,12,31,23,59,59],\"starDate\":[2020,6,14,0,0],\"price\":35.5}";
+        String expected = "{\"productId\":35455,\"chain\":1,\"rate\":1,\"endDate\":[2020,12,31,23,59,59],\"startDate\":[2020,6,14,0,0],\"finalPrice\":35.5}";
         MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/api/prices/calculate")
                         .param("applicationDate", "2020-06-14T10:00:00")
                         .param("productId", "35455")
@@ -54,7 +55,7 @@ public class PriceControllerTest {
      */
     @Test
     public void testCalculatePrice_2() throws Exception {
-        String expected = "{\"product\":35455,\"chain\":1,\"rate\":1,\"endDate\":[2020,12,31,23,59,59],\"starDate\":[2020,6,14,0,0],\"price\":35.5}";
+        String expected = "{\"productId\":35455,\"chain\":1,\"rate\":2,\"endDate\":[2020,12,31,23,59,59],\"startDate\":[2020,6,14,0,0],\"finalPrice\":35.5}";
         MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/api/prices/calculate")
                         .param("applicationDate", "2020-06-14T16:00:00")
                         .param("productId", "35455")
@@ -71,7 +72,7 @@ public class PriceControllerTest {
      */
     @Test
     public void testCalculatePrice_3() throws Exception {
-        String expected = "{\"product\":35455,\"chain\":1,\"rate\":1,\"endDate\":[2020,12,31,23,59,59],\"starDate\":[2020,6,14,0,0],\"price\":35.5}";
+        String expected = "{\"productId\":35455,\"chain\":1,\"rate\":1,\"endDate\":[2020,12,31,23,59,59],\"startDate\":[2020,6,14,0,0],\"finalPrice\":35.5}";
         MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/api/prices/calculate")
                         .param("applicationDate", "2020-06-14T09:00:00")
                         .param("productId", "35455")
@@ -88,7 +89,7 @@ public class PriceControllerTest {
      */
     @Test
     public void testCalculatePrice_4() throws Exception {
-        String expected = "{\"product\":35455,\"chain\":1,\"rate\":1,\"endDate\":[2020,12,31,23,59,59],\"starDate\":[2020,6,14,0,0],\"price\":35.5}";
+        String expected = "{\"productId\":35455,\"chain\":1,\"rate\":1,\"endDate\":[2020,12,31,23,59,59],\"startDate\":[2020,6,14,0,0],\"finalPrice\":35.5}";
         MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/api/prices/calculate")
                         .param("applicationDate", "2020-06-15T10:00:00")
                         .param("productId", "35455")
@@ -105,7 +106,7 @@ public class PriceControllerTest {
      */
     @Test
     public void testCalculatePrice_5() throws Exception {
-        String expected = "{\"product\":35455,\"chain\":1,\"rate\":1,\"endDate\":[2020,12,31,23,59,59],\"starDate\":[2020,6,14,0,0],\"price\":35.5}";
+        String expected = "{\"productId\":35455,\"chain\":1,\"rate\":1,\"endDate\":[2020,12,31,23,59,59],\"startDate\":[2020,6,14,0,0],\"finalPrice\":35.5}";
         MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/api/prices/calculate")
                         .param("applicationDate", "2020-06-16T21:00:00")
                         .param("productId", "35455")

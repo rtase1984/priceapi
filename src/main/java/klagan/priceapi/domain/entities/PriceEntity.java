@@ -1,4 +1,4 @@
-package klagan.priceapi.entities;
+package klagan.priceapi.domain.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -28,7 +28,7 @@ public class PriceEntity {
     private LocalDateTime endDate;
 
     @Column(name = "PRICE_LIST")
-    private Long priceList;
+    private Long priceListId;
 
     @Column(name = "PRODUCT_ID")
     private Long productId;
@@ -37,11 +37,8 @@ public class PriceEntity {
     private Integer priority;
 
     @Column(name = "PRICE")
-    private BigDecimal price;
+    private BigDecimal finalPrice;
 
     @Column(name = "CURR")
-    private String curr;
-
-    public PriceEntity(long l, LocalDateTime parse, LocalDateTime parse1, long l1, long l2, int i, BigDecimal bigDecimal, String eur) {
-    }
+    private String currency;
 }
