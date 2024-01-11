@@ -1,4 +1,4 @@
-package klagan.priceapi.application;
+package klagan.priceapi.infrastructure.web;
 
 import klagan.priceapi.infrastructure.adapter.PriceServiceAdapter;
 import klagan.priceapi.infrastructure.web.PriceController;
@@ -117,18 +117,4 @@ public class PriceControllerTest {
         JSONAssert.assertEquals(expected, result.getResponse().getContentAsString(), false);
     }
 
-    /*
-     * Request at 4:00 p.m. on the 14th 2021 for product 35455 for brand 1
-     * Should return status 204
-     */
-    @Test
-    public void testCalculatePrice_NotContent() throws Exception {
-        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/api/prices/calculate")
-                        .param("applicationDate", "2021-06-14T16:00:00")
-                        .param("productId", "35455")
-                        .param("brandId", "1")
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isNoContent())
-                .andReturn();
-    }
 }

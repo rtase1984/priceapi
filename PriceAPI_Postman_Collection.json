@@ -1,0 +1,226 @@
+{
+	"info": {
+		"_postman_id": "e2a3a3c4-cb2e-46b6-858b-b23d3bef11c3",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22692733"
+	},
+	"item": [
+		{
+			"name": "TestCase1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/prices/calculate?applicationDate=2020-06-14T10:00:00&productId=35455&brandId=1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"prices",
+						"calculate"
+					],
+					"query": [
+						{
+							"key": "applicationDate",
+							"value": "2020-06-14T10:00:00"
+						},
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TestCase2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/prices/calculate?applicationDate=2020-06-14T16:00:00&productId=35455&brandId=1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"prices",
+						"calculate"
+					],
+					"query": [
+						{
+							"key": "applicationDate",
+							"value": "2020-06-14T16:00:00"
+						},
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TestCase3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/prices/calculate?applicationDate=2020-06-14T09:00:00&productId=35455&brandId=1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"prices",
+						"calculate"
+					],
+					"query": [
+						{
+							"key": "applicationDate",
+							"value": "2020-06-14T09:00:00"
+						},
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TestCase4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/prices/calculate?applicationDate=2020-06-15T10:00:00&productId=35455&brandId=1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"prices",
+						"calculate"
+					],
+					"query": [
+						{
+							"key": "applicationDate",
+							"value": "2020-06-15T10:00:00"
+						},
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TestCase5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/prices/calculate?applicationDate=2020-06-16T21:00:00&productId=35455&brandId=1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"prices",
+						"calculate"
+					],
+					"query": [
+						{
+							"key": "applicationDate",
+							"value": "2020-06-16T21:00:00"
+						},
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TestCase6_NoContent",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/prices/calculate?applicationDate=2021-06-14T13:00:00&productId=35455&brandId=2",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"prices",
+						"calculate"
+					],
+					"query": [
+						{
+							"key": "applicationDate",
+							"value": "2021-06-14T13:00:00"
+						},
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "brandId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080"
+		}
+	]
+}
