@@ -7,6 +7,8 @@ This Spring Boot project is a solution to the challenge provided as part of the 
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
 - [Running Tests](#running-tests)
+- [Postman Collection](#postman-collection)
+- [Test cases](#test-cases)
 - [Project Structure](#project-structure)
 
 ## Overview
