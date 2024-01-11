@@ -38,7 +38,7 @@ public class PriceControllerTest {
      */
     @Test
     public void testCalculatePrice_1() throws Exception {
-        String expected = "{\"productId\":35455,\"chain\":1,\"rate\":1,\"endDate\":[2020,12,31,23,59,59],\"startDate\":[2020,6,14,0,0],\"finalPrice\":35.5}";
+        String expected = "{\"productId\":35455,\"chain\":1,\"rate\":1,\"startDate\":[2020,6,14,0,0],\"endDate\":[2020,12,31,23,59,59],\"finalPrice\":35.5}";
         MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/api/prices/calculate")
                         .param("applicationDate", "2020-06-14T10:00:00")
                         .param("productId", "35455")
@@ -55,7 +55,7 @@ public class PriceControllerTest {
      */
     @Test
     public void testCalculatePrice_2() throws Exception {
-        String expected = "{\"productId\":35455,\"chain\":1,\"rate\":2,\"endDate\":[2020,12,31,23,59,59],\"startDate\":[2020,6,14,0,0],\"finalPrice\":35.5}";
+        String expected = "{\"productId\":35455,\"chain\":1,\"rate\":2,\"startDate\":[2020,06,14,15,0],\"endDate\":[2020,06,14,18,30],\"finalPrice\":25.45}";
         MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/api/prices/calculate")
                         .param("applicationDate", "2020-06-14T16:00:00")
                         .param("productId", "35455")
@@ -72,7 +72,7 @@ public class PriceControllerTest {
      */
     @Test
     public void testCalculatePrice_3() throws Exception {
-        String expected = "{\"productId\":35455,\"chain\":1,\"rate\":1,\"endDate\":[2020,12,31,23,59,59],\"startDate\":[2020,6,14,0,0],\"finalPrice\":35.5}";
+        String expected = "{\"productId\":35455,\"chain\":1,\"rate\":1,\"startDate\":[2020,6,14,0,0],\"endDate\":[2020,12,31,23,59,59],\"finalPrice\":35.5}";
         MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/api/prices/calculate")
                         .param("applicationDate", "2020-06-14T09:00:00")
                         .param("productId", "35455")
@@ -89,7 +89,7 @@ public class PriceControllerTest {
      */
     @Test
     public void testCalculatePrice_4() throws Exception {
-        String expected = "{\"productId\":35455,\"chain\":1,\"rate\":1,\"endDate\":[2020,12,31,23,59,59],\"startDate\":[2020,6,14,0,0],\"finalPrice\":35.5}";
+        String expected = "{\"productId\":35455,\"chain\":1,\"rate\":3,\"endDate\":[2020,6,15,11,0],\"startDate\":[2020,6,15,0,0],\"finalPrice\":30.5}";
         MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/api/prices/calculate")
                         .param("applicationDate", "2020-06-15T10:00:00")
                         .param("productId", "35455")
@@ -106,7 +106,7 @@ public class PriceControllerTest {
      */
     @Test
     public void testCalculatePrice_5() throws Exception {
-        String expected = "{\"productId\":35455,\"chain\":1,\"rate\":1,\"endDate\":[2020,12,31,23,59,59],\"startDate\":[2020,6,14,0,0],\"finalPrice\":35.5}";
+        String expected = "{\"productId\":35455,\"chain\":1,\"rate\":4,\"endDate\":[2020,12,31,23,59,59],\"startDate\":[2020,6,15,16,0],\"finalPrice\":38.95}";
         MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/api/prices/calculate")
                         .param("applicationDate", "2020-06-16T21:00:00")
                         .param("productId", "35455")
